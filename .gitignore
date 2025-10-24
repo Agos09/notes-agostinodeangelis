@@ -1,0 +1,98 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git
+.mypy_cache
+.pytest_cache
+.hypothesis
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Logs
+*.log
+logs/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.staging
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+
+# Hugo specific
+hugo_stats.json
+
+# Personal notes and drafts (optional - you might want to keep some)
+notes.org
+*.org
+
+# Project-specific directories you might want to exclude
+# Uncomment if you don't want these in public repo:
+ 1_Requirements/
+ 2_Data/
+ 3_Scripts/
+ 4_Resources/
+ 5_Output/
+ data/
+
+# Docker files (if you have any)
+docker-compose.override.yml
+
+# Node.js (if you add any JS build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local development files
+.local/
+local/

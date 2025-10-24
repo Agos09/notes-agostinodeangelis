@@ -1,7 +1,0 @@
-* Inbox
-** [2025-10-24 Fri 08:45]
-ho generato il sito su hostinger vps con docker-compose e generato con ai una guida per il workflow della crezione di contenuti.
-oggi la struttura del sito e' live
-ho infine spostato il progetto che prima si chiamava ip-spark e creato con replit sul nuovo subdomain notes.agostinodeangelis.com
-
-
