@@ -1,0 +1,94 @@
+{{/* Enhanced single page template with bidirectional links */}}
+{{ define "main" }}
+<article class="post">
+    <header id="post-header">
+        <h1>{{ .Title }}</h1>
+        <div class="post-meta">
+            {{- if isset .Params "date" -}}
+                {{ if eq .Lastmod .Date }}
+                <time>{{ .Date.Format "January 2, 2006" }}</time>
+                {{ else }}
+                Updated <time>{{ .Lastmod.Format "January 2, 2006" }}</time>
+                {{ end }}
+            {{- end -}}
+            
+            {{- if .Params.tags -}}
+            <div class="tags">
+                {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="tag">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{- end -}}
+        </div>
+    </header>
+
+    {{/* Table of Contents */}}
+    {{ if .Params.toc }}
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+
+    {{/* Main content */}}
+    <div class="content">
+        {{- .Content -}}
+    </div>
+
+    {{/* Backlinks section */}}
+    {{ if .Params.backlinks }}
+    <div class="backlinks">
+        <h3>Linked from</h3>
+        <ul>
+            {{ range .Params.backlinks }}
+            <li><a href="{{ .url }}">{{ .title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    {{/* Related articles */}}
+    {{ if .Params.related }}
+    <div class="related">
+        <h3>Related Articles</h3>
+        <ul>
+            {{ range .Params.related }}
+            <li><a href="{{ .url }}">{{ .title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    {{/* Knowledge graph visualization */}}
+    {{ if .Site.Params.enableGraph }}
+    <div class="knowledge-graph">
+        <h3>Knowledge Graph</h3>
+        <div id="graph-container" data-page-id="{{ .Params.org_roam_id | default .File.LogicalName }}"></div>
+    </div>
+    {{ end }}
+
+    {{/* Navigation */}}
+    <nav class="post-nav">
+        {{ with .PrevInSection }}
+        <div class="prev">
+            <a href="{{ .Permalink }}">← {{ .Title }}</a>
+        </div>
+        {{ end }}
+        {{ with .NextInSection }}
+        <div class="next">
+            <a href="{{ .Permalink }}">{{ .Title }} →</a>
+        </div>
+        {{ end }}
+    </nav>
+</article>
+
+{{/* Include JavaScript for interactive features */}}
+{{ if .Site.Params.enableGraph }}
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="{{ "js/knowledge-graph.js" | relURL }}"></script>
+{{ end }}
+
+{{ if .Site.Params.enableSearch }}
+<script src="{{ "js/search.js" | relURL }}"></script>
+{{ end }}
+{{ end }}

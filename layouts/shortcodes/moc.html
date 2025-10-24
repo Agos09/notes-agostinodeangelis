@@ -1,0 +1,65 @@
+{{/* MOC (Map of Content) shortcode for organizing related articles */}}
+{{ $mocTitle := .Get "title" | default "Map of Content" }}
+{{ $tags := .Get "tags" | default "" }}
+{{ $concepts := .Get "concepts" | default "" }}
+
+<div class="moc-container">
+    <h3>{{ $mocTitle }}</h3>
+    
+    {{ if $tags }}
+    <div class="moc-section">
+        <h4>Articles by Tags</h4>
+        {{ $tagList := split $tags "," }}
+        {{ range $tagList }}
+            {{ $tag := trim . " " }}
+            {{ $pages := where $.Site.Pages "Params.tags" "intersect" (slice $tag) }}
+            {{ if $pages }}
+            <div class="tag-group">
+                <h5>{{ $tag }}</h5>
+                <ul>
+                    {{ range $pages }}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if $concepts }}
+    <div class="moc-section">
+        <h4>Related Concepts</h4>
+        {{ $conceptList := split $concepts "," }}
+        {{ range $conceptList }}
+            {{ $concept := trim . " " }}
+            {{ $pages := where $.Site.Pages "Params.concepts" "intersect" (slice $concept) }}
+            {{ if $pages }}
+            <div class="concept-group">
+                <h5>{{ $concept }}</h5>
+                <ul>
+                    {{ range $pages }}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Dynamic content based on current page */}}
+    <div class="moc-section">
+        <h4>Related Articles</h4>
+        {{ $related := .Site.RegularPages.Related . | first 5 }}
+        {{ if $related }}
+        <ul>
+            {{ range $related }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+        {{ else }}
+        <p>No related articles found.</p>
+        {{ end }}
+    </div>
+</div>

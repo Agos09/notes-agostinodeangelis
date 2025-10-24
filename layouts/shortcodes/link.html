@@ -1,0 +1,14 @@
+{{/* Internal link shortcode with automatic backlink generation */}}
+{{ $target := .Get "target" }}
+{{ $text := .Get "text" | default $target }}
+{{ $page := .Site.GetPage $target }}
+
+{{ if $page }}
+<a href="{{ $page.Permalink }}" class="internal-link" data-target="{{ $page.Params.org_roam_id | default $page.File.LogicalName }}">
+    {{ $text }}
+</a>
+{{ else }}
+<span class="broken-link" title="Broken internal link: {{ $target }}">
+    {{ $text }} <sup>⚠️</sup>
+</span>
+{{ end }}

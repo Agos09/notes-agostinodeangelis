@@ -1,0 +1,46 @@
+<header id="banner">
+    <div class="header-content">
+        <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+        
+        {{/* Search functionality */}}
+        {{ if .Site.Params.enableSearch -}}
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search articles..." class="search-input">
+            <div id="search-results" class="search-results"></div>
+        </div>
+        {{ end -}}
+        
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                {{ range .Site.Menus.main.ByWeight -}}
+                <li>
+                    {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+                </li>
+                {{- end }}
+                
+                {{/* Additional navigation for knowledge base features */}}
+                {{ if .Site.Params.enableGraph -}}
+                <li><a href="/graph" title="Knowledge Graph">Graph</a></li>
+                {{ end -}}
+                
+                {{ if .Site.Params.enableSearch -}}
+                <li><a href="/search" title="Advanced Search">Search</a></li>
+                {{ end -}}
+            </ul>
+        </nav>
+    </div>
+    
+    {{/* Breadcrumb navigation for pages */}}
+    {{ if .IsPage -}}
+    <nav class="breadcrumb">
+        <ol>
+            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+            {{ if .Section -}}
+            <li><a href="/{{ .Section }}/">{{ .Section | title }}</a></li>
+            {{ end -}}
+            <li class="current">{{ .Title }}</li>
+        </ol>
+    </nav>
+    {{ end -}}
+</header>

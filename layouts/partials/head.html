@@ -1,0 +1,92 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ with .Site.Params.description -}}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    {{ $resources := slice -}}
+
+    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
+
+    {{ $resources = $resources | append (resources.Get "css/min770px.css") -}}
+
+    {{ $dark := .Site.Params.dark | default "auto" -}}
+    {{ if not (eq $dark "off") -}}
+        {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
+    {{ end -}}
+
+    {{ if .Site.Params.highlight -}}
+        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
+    {{ end -}}
+
+    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
+    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+
+    {{/* Enhanced features CSS */}}
+    {{ if .Site.Params.enableSearch -}}
+    <link rel="stylesheet" href="{{ "css/networked-content.css" | relURL }}">
+    {{ end -}}
+
+    {{/* Structured data for SEO */}}
+    {{ if .IsPage -}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ .Title }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ .Site.Params.author | default .Site.Title }}"
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+        "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+        "description": "{{ .Summary | default .Site.Params.description }}",
+        "url": "{{ .Permalink }}",
+        {{ if .Params.tags -}}
+        "keywords": "{{ delimit .Params.tags ", " }}",
+        {{ end -}}
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ .Site.Title }}",
+            "url": "{{ .Site.BaseURL }}"
+        }
+    }
+    </script>
+    {{ end -}}
+
+    {{/* Open Graph meta tags */}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:description" content="{{ .Summary | default .Site.Params.description }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ if .IsPage -}}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ if .Params.tags -}}
+    {{ range .Params.tags -}}
+    <meta property="article:tag" content="{{ . }}">
+    {{ end -}}
+    {{ end -}}
+    {{ end -}}
+
+    {{/* Twitter Card meta tags */}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Summary | default .Site.Params.description }}">
+
+    {{/* Knowledge base specific meta tags */}}
+    {{ if .Params.org_roam_id -}}
+    <meta name="org-roam-id" content="{{ .Params.org_roam_id }}">
+    {{ end -}}
+    {{ if .Params.concepts -}}
+    <meta name="concepts" content="{{ delimit .Params.concepts ", " }}">
+    {{ end -}}
+
+    <title>{{ .Title }}</title>
+</head>

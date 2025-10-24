@@ -1,4 +1,94 @@
-baseURL = '/'
+baseURL = 'https://notes.agostinodeangelis.com/'
 languageCode = 'en-us'
 title = 'IP Spark'
 theme = "etch"
+
+# Enhanced configuration for networked knowledge base
+enableInlineShortcodes = true
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+# Taxonomies for content organization
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  concept = "concepts"
+  moc = "mocs"
+
+# Content types
+[contentTypes]
+  [contentTypes."posts"]
+    path = "posts"
+    [contentTypes."posts".frontmatter]
+      title = "string"
+      date = "date"
+      tags = "array"
+      categories = "array"
+      concepts = "array"
+      org_roam_id = "string"
+      slug = "string"
+      draft = "boolean"
+      backlinks = "array"
+      related = "array"
+
+# Permalinks for clean URLs
+[permalinks]
+  posts = "/:title/"
+  mocs = "/moc/:title/"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    title = "Posts"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "mocs"
+    name = "MOCs"
+    title = "Maps of Content"
+    url = "/mocs/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "About"
+    url = "/about/"
+    weight = 30
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+
+# Build configuration
+[build]
+  writeStats = true
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+
+# Parameters for theme customization
+[params]
+  description = "A networked knowledge base exploring intellectual property, innovation, and digital transformation"
+  copyright = "Copyright © 2025 IP Spark"
+  dark = "auto"
+  highlight = true
+  enableSearch = true
+  enableGraph = true
+  enableBacklinks = true

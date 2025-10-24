@@ -1,0 +1,212 @@
+{{ define "main" }}
+<div class="graph-page">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ if .Content }}
+        <div class="page-content">
+            {{ .Content }}
+        </div>
+        {{ end }}
+    </header>
+
+    {{/* Graph controls */}}
+    <div class="graph-controls">
+        <div class="control-group">
+            <label for="layout-select">Layout:</label>
+            <select id="layout-select" class="control-select">
+                <option value="force">Force-directed</option>
+                <option value="circular">Circular</option>
+                <option value="hierarchical">Hierarchical</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="node-size">Node Size:</label>
+            <select id="node-size" class="control-select">
+                <option value="connections">By Connections</option>
+                <option value="tags">By Tags</option>
+                <option value="uniform">Uniform</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="color-scheme">Color Scheme:</label>
+            <select id="color-scheme" class="control-select">
+                <option value="tags">By Tags</option>
+                <option value="concepts">By Concepts</option>
+                <option value="date">By Date</option>
+                <option value="connections">By Connections</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <button id="reset-graph" class="control-btn">Reset View</button>
+            <button id="export-graph" class="control-btn">Export</button>
+            <button id="fullscreen-graph" class="control-btn">Fullscreen</button>
+        </div>
+    </div>
+
+    {{/* Main graph container */}}
+    <div class="graph-container">
+        <div id="main-graph" class="main-graph"></div>
+        
+        <div class="graph-sidebar">
+            <div class="graph-stats">
+                <h3>Statistics</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Total Nodes:</span>
+                    <span id="node-count" class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Links:</span>
+                    <span id="link-count" class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Most Connected:</span>
+                    <span id="most-connected" class="stat-value">-</span>
+                </div>
+            </div>
+            
+            <div class="graph-legend">
+                <h3>Legend</h3>
+                <div id="legend-content">
+                    <!-- Legend will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{/* Graph information */}}
+    <div class="graph-info">
+        <h3>About the Knowledge Graph</h3>
+        <p>The knowledge graph visualizes relationships between articles in your knowledge base. Nodes represent articles, and edges represent connections between them.</p>
+        
+        <h4>Connection Types:</h4>
+        <ul>
+            <li><strong>Internal Links:</strong> Direct references between articles</li>
+            <li><strong>Shared Tags:</strong> Articles with common tags</li>
+            <li><strong>Conceptual Similarity:</strong> Articles about related concepts</li>
+            <li><strong>Content Similarity:</strong> Articles with similar content</li>
+        </ul>
+        
+        <h4>How to Use:</h4>
+        <ul>
+            <li><strong>Click nodes</strong> to navigate to articles</li>
+            <li><strong>Hover nodes</strong> to see article previews</li>
+            <li><strong>Drag nodes</strong> to rearrange the graph</li>
+            <li><strong>Use controls</strong> to change layout and appearance</li>
+        </ul>
+    </div>
+</div>
+
+{{/* Include graph JavaScript */}}
+<script src="{{ "js/knowledge-graph.js" | relURL }}"></script>
+<script>
+// Enhanced graph page functionality
+document.addEventListener('DOMContentLoaded', function() {
+    let graphInstance = null;
+    
+    // Load graph data
+    fetch('/api/graph-data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Initialize graph
+            graphInstance = new KnowledgeGraph('#main-graph', data);
+            
+            // Update statistics
+            document.getElementById('node-count').textContent = data.nodes.length;
+            document.getElementById('link-count').textContent = data.links.length;
+            
+            // Find most connected node
+            const mostConnected = data.nodes.reduce((max, node) => 
+                node.connections > max.connections ? node : max
+            );
+            document.getElementById('most-connected').textContent = mostConnected.title;
+            
+            // Update legend
+            updateLegend(data);
+        })
+        .catch(error => {
+            console.error('Error loading graph data:', error);
+            document.getElementById('main-graph').innerHTML = 
+                '<div class="error-message">Error loading graph data. Please try again later.</div>';
+        });
+    
+    // Control event listeners
+    document.getElementById('layout-select').addEventListener('change', function() {
+        if (graphInstance) {
+            // Change layout algorithm
+            console.log('Layout changed to:', this.value);
+        }
+    });
+    
+    document.getElementById('node-size').addEventListener('change', function() {
+        if (graphInstance) {
+            // Change node sizing
+            console.log('Node size changed to:', this.value);
+        }
+    });
+    
+    document.getElementById('color-scheme').addEventListener('change', function() {
+        if (graphInstance) {
+            // Change color scheme
+            console.log('Color scheme changed to:', this.value);
+        }
+    });
+    
+    document.getElementById('reset-graph').addEventListener('click', function() {
+        if (graphInstance) {
+            // Reset graph view
+            console.log('Resetting graph view');
+        }
+    });
+    
+    document.getElementById('export-graph').addEventListener('click', function() {
+        // Export graph as image
+        console.log('Exporting graph');
+    });
+    
+    document.getElementById('fullscreen-graph').addEventListener('click', function() {
+        // Toggle fullscreen
+        console.log('Toggling fullscreen');
+    });
+    
+    function updateLegend(data) {
+        const legendContent = document.getElementById('legend-content');
+        
+        // Group nodes by tags for legend
+        const tagGroups = {};
+        data.nodes.forEach(node => {
+            node.tags.forEach(tag => {
+                if (!tagGroups[tag]) {
+                    tagGroups[tag] = [];
+                }
+                tagGroups[tag].push(node);
+            });
+        });
+        
+        let legendHTML = '<div class="legend-section">';
+        legendHTML += '<h4>Tags</h4>';
+        Object.keys(tagGroups).forEach(tag => {
+            legendHTML += `<div class="legend-item">
+                <span class="legend-color" style="background-color: ${getTagColor(tag)}"></span>
+                <span class="legend-label">${tag} (${tagGroups[tag].length})</span>
+            </div>`;
+        });
+        legendHTML += '</div>';
+        
+        legendContent.innerHTML = legendHTML;
+    }
+    
+    function getTagColor(tag) {
+        // Simple color generation based on tag name
+        const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f'];
+        const hash = tag.split('').reduce((a, b) => {
+            a = ((a << 5) - a) + b.charCodeAt(0);
+            return a & a;
+        }, 0);
+        return colors[Math.abs(hash) % colors.length];
+    }
+});
+</script>
+{{ end }}
