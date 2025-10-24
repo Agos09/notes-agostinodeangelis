@@ -80,11 +80,20 @@
     <meta name="twitter:title" content="{{ .Title }}">
     <meta name="twitter:description" content="{{ .Summary | default .Site.Params.description }}">
 
-    {{/* Knowledge base specific meta tags */}}
-    {{ if .Params.org_roam_id -}}
-    <meta name="org-roam-id" content="{{ .Params.org_roam_id }}">
+    {{/* Google Analytics */}}
+    {{ if .Site.Params.googleAnalytics -}}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalytics }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ .Site.Params.googleAnalytics }}', {
+            page_title: '{{ .Title }}',
+            page_location: '{{ .Permalink }}'
+        });
+    </script>
     {{ end -}}
-    {{ if .Params.concepts -}}
     <meta name="concepts" content="{{ delimit .Params.concepts ", " }}">
     {{ end -}}
 

@@ -3,6 +3,13 @@ languageCode = 'en-us'
 title = 'Mind & Digital Era'
 theme = "etch"
 
+# Site parameters
+[params]
+  author = "Agostino De Angelis"
+  description = "A networked knowledge base exploring the human mind, epistemology, and the new digital era"
+  googleAnalytics = "G-XXXXXXXXXX"  # Replace with your Google Analytics ID
+  # googleAnalytics = ""  # Comment out if not using Google Analytics
+
 # Enhanced configuration for networked knowledge base
 enableInlineShortcodes = true
 pygmentsCodeFences = true
