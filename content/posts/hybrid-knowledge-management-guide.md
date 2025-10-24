@@ -1,13 +1,28 @@
 ---
-title: "Building a Hybrid Knowledge Management System: Org-Roam + Denote"
-date: 2025-01-22
-draft: false
-tags: ["emacs", "knowledge-management", "digital-tools", "productivity"]
-topics: ["digital-era"]
-domains: ["technology"]
-concepts: ["hybrid-systems", "emacs-configuration", "workflow-optimization"]
 backlinks: []
-related: []
+concepts:
+- hybrid-systems
+- emacs-configuration
+- workflow-optimization
+date: 2025-01-22
+domains:
+- technology
+draft: false
+related:
+- similarity: 3
+  title: 'Org-Roam vs Denote: Choosing the Right Knowledge Management System'
+  url: /org-roam-vs-denote-choosing-the-right-knowledge-management-system/
+- similarity: 1
+  title: The Cognitive Implications of Digital Knowledge Management
+  url: /the-cognitive-implications-of-digital-knowledge-management/
+tags:
+- emacs
+- knowledge-management
+- digital-tools
+- productivity
+title: 'Building a Hybrid Knowledge Management System: Org-Roam + Denote'
+topics:
+- digital-era
 ---
 
 # Building a Hybrid Knowledge Management System: Org-Roam + Denote

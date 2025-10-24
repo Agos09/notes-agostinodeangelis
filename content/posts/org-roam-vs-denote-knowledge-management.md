@@ -1,13 +1,30 @@
 ---
-title: "Org-Roam vs Denote: Choosing the Right Knowledge Management System"
-date: 2025-01-22
-draft: false
-tags: ["knowledge-management", "emacs", "digital-tools", "epistemology"]
-topics: ["digital-era", "knowledge-systems"]
-domains: ["technology", "cognitive-science"]
-concepts: ["zettelkasten", "networked-thinking", "file-organization"]
 backlinks: []
-related: []
+concepts:
+- zettelkasten
+- networked-thinking
+- file-organization
+date: 2025-01-22
+domains:
+- technology
+- cognitive-science
+draft: false
+related:
+- similarity: 3
+  title: 'Building a Hybrid Knowledge Management System: Org-Roam + Denote'
+  url: /building-a-hybrid-knowledge-management-system-org-roam-deno/
+- similarity: 2
+  title: The Cognitive Implications of Digital Knowledge Management
+  url: /the-cognitive-implications-of-digital-knowledge-management/
+tags:
+- knowledge-management
+- emacs
+- digital-tools
+- epistemology
+title: 'Org-Roam vs Denote: Choosing the Right Knowledge Management System'
+topics:
+- digital-era
+- knowledge-systems
 ---
 
 # Org-Roam vs Denote: Choosing the Right Knowledge Management System

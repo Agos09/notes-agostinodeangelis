@@ -1,11 +1,26 @@
 ---
-title: "Human Mind & Digital Era MOC"
+backlinks: []
+concepts:
+- cognition
+- knowledge
+- digital-age
+- learning
+- technology
 date: 2025-01-22
+domains:
+- human-mind
+- digital-era
 draft: false
-tags: ["moc", "knowledge-map", "overview"]
-topics: ["epistemology", "cognitive-science", "digital-transformation"]
-domains: ["human-mind", "digital-era"]
-concepts: ["cognition", "knowledge", "digital-age", "learning", "technology"]
+related: []
+tags:
+- moc
+- knowledge-map
+- overview
+title: Human Mind & Digital Era MOC
+topics:
+- epistemology
+- cognitive-science
+- digital-transformation
 ---
 
 # Human Mind & Digital Era - Map of Content

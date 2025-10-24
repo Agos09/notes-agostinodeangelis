@@ -1,10 +1,23 @@
 ---
-title: "Topics"
+backlinks: []
 date: 2025-01-22
+domains:
+- human-mind
+- digital-era
 draft: false
-tags: ["topics", "navigation", "knowledge"]
-topics: ["epistemology", "cognitive-science", "digital-transformation"]
-domains: ["human-mind", "digital-era"]
+related:
+- similarity: 1
+  title: About
+  url: /about/index/
+tags:
+- topics
+- navigation
+- knowledge
+title: Topics
+topics:
+- epistemology
+- cognitive-science
+- digital-transformation
 ---
 
 # Explore Our Topics

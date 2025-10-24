@@ -1,13 +1,30 @@
 ---
-title: "The Cognitive Implications of Digital Knowledge Management"
-date: 2025-01-22
-draft: false
-tags: ["cognitive-science", "digital-era", "knowledge-management", "epistemology"]
-topics: ["human-mind", "digital-era"]
-domains: ["cognitive-science", "technology"]
-concepts: ["extended-cognition", "digital-literacy", "information-processing"]
 backlinks: []
-related: []
+concepts:
+- extended-cognition
+- digital-literacy
+- information-processing
+date: 2025-01-22
+domains:
+- cognitive-science
+- technology
+draft: false
+related:
+- similarity: 2
+  title: 'Org-Roam vs Denote: Choosing the Right Knowledge Management System'
+  url: /org-roam-vs-denote-choosing-the-right-knowledge-management-system/
+- similarity: 1
+  title: 'Building a Hybrid Knowledge Management System: Org-Roam + Denote'
+  url: /building-a-hybrid-knowledge-management-system-org-roam-deno/
+tags:
+- cognitive-science
+- digital-era
+- knowledge-management
+- epistemology
+title: The Cognitive Implications of Digital Knowledge Management
+topics:
+- human-mind
+- digital-era
 ---
 
 # The Cognitive Implications of Digital Knowledge Management

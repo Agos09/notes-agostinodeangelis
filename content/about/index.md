@@ -1,10 +1,23 @@
 ---
-title: "About"
+backlinks: []
 date: 2025-01-22
+domains:
+- human-mind
+- digital-era
 draft: false
-tags: ["about", "philosophy", "knowledge"]
-topics: ["epistemology", "cognitive-science", "digital-transformation"]
-domains: ["human-mind", "digital-era"]
+related:
+- similarity: 1
+  title: Topics
+  url: /topics/index/
+tags:
+- about
+- philosophy
+- knowledge
+title: About
+topics:
+- epistemology
+- cognitive-science
+- digital-transformation
 ---
 
 # About Mind & Digital Era
