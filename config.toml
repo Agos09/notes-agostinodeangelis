@@ -1,6 +1,6 @@
 baseURL = 'https://notes.agostinodeangelis.com/'
 languageCode = 'en-us'
-title = 'IP Spark'
+title = 'Mind & Digital Era'
 theme = "etch"
 
 # Enhanced configuration for networked knowledge base
@@ -14,6 +14,8 @@ pygmentsUseClasses = true
   category = "categories"
   concept = "concepts"
   moc = "mocs"
+  topic = "topics"
+  domain = "domains"
 
 # Content types
 [contentTypes]
@@ -25,6 +27,8 @@ pygmentsUseClasses = true
       tags = "array"
       categories = "array"
       concepts = "array"
+      topics = "array"
+      domains = "array"
       org_roam_id = "string"
       slug = "string"
       draft = "boolean"
@@ -40,17 +44,24 @@ pygmentsUseClasses = true
 [menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Posts"
-    title = "Posts"
+    name = "Articles"
+    title = "Articles"
     url = "/"
     weight = 10
 
   [[menu.main]]
     identifier = "mocs"
-    name = "MOCs"
-    title = "Maps of Content"
+    name = "Knowledge Maps"
+    title = "Knowledge Maps"
     url = "/mocs/"
     weight = 20
+
+  [[menu.main]]
+    identifier = "topics"
+    name = "Topics"
+    title = "Topics"
+    url = "/topics/"
+    weight = 25
 
   [[menu.main]]
     identifier = "about"
@@ -85,8 +96,8 @@ pygmentsUseClasses = true
 
 # Parameters for theme customization
 [params]
-  description = "A networked knowledge base exploring intellectual property, innovation, and digital transformation"
-  copyright = "Copyright © 2025 IP Spark"
+  description = "A networked knowledge base exploring the human mind, epistemology, and the new digital era"
+  copyright = "Copyright © 2025 Mind & Digital Era"
   dark = "auto"
   highlight = true
   enableSearch = true

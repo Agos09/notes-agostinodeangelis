@@ -9,7 +9,7 @@ This guide covers the complete workflow for creating, editing, and publishing co
 #### Option A: Using the Python Script (Recommended)
 ```bash
 # Navigate to your project directory
-cd /home/ago/kDrive/1_Projects/ip-spark
+cd /home/ago/kDrive/1_Projects/notes_agostinodeangelis_da15e11b/
 
 # Create a new post using the provided script
 python3 scripts/post.py "Your Post Title Here"

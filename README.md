@@ -1,6 +1,6 @@
-# IP Spark - Networked Knowledge Base & Blog
+# Mind & Digital Era - Networked Knowledge Base & Blog
 
-A powerful Hugo-based static website that combines the best of networked thinking (like Obsidian/org-roam) with seamless publishing from Emacs. This project transforms your static blog into a dynamic knowledge base with bidirectional links, intelligent search, and visual knowledge graphs.
+A powerful Hugo-based static website that combines the best of networked thinking (like Obsidian/org-roam) with seamless publishing from Emacs. This project transforms your static blog into a dynamic knowledge base exploring the intersection of **human cognition**, **epistemology**, and the **new digital era**.
 
 ## 🌟 Features
 
@@ -249,23 +249,29 @@ ip-spark/
 
 ## 🎯 Use Cases
 
-### Personal Knowledge Base
-- Capture ideas and insights from reading
-- Build connections between concepts
-- Create comprehensive topic maps
-- Share knowledge publicly
+### Cognitive Research & Education
+- Explore the intersection of human cognition and digital technology
+- Document research findings on learning and knowledge acquisition
+- Create comprehensive maps of cognitive science concepts
+- Share insights on digital literacy and information processing
 
-### Professional Blog
-- Demonstrate expertise through networked content
-- Show thought evolution over time
-- Create comprehensive resource collections
-- Engage readers with interactive features
+### Philosophy & Epistemology
+- Build networks of philosophical concepts and theories
+- Track the evolution of knowledge theories over time
+- Create comprehensive resource collections on epistemology
+- Engage readers with interactive philosophical explorations
 
-### Research Documentation
-- Organize research findings
-- Track idea development
-- Create literature reviews
-- Share research publicly
+### Digital Transformation Studies
+- Organize research on how technology affects human cognition
+- Track idea development in digital humanities
+- Create literature reviews on AI and human intelligence
+- Share research on information overload and digital literacy
+
+### Personal Knowledge Development
+- Capture insights from reading across multiple disciplines
+- Build connections between cognitive science, philosophy, and technology
+- Create comprehensive topic maps on human learning
+- Develop understanding of the digital age's impact on cognition
 
 ## 🔧 Customization
 
