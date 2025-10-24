@@ -7,8 +7,7 @@ theme = "etch"
 [params]
   author = "Agostino De Angelis"
   description = "A networked knowledge base exploring the human mind, epistemology, and the new digital era"
-  googleAnalytics = "G-XXXXXXXXXX"  # Replace with your Google Analytics ID
-  # googleAnalytics = ""  # Comment out if not using Google Analytics
+  googleAnalytics = "G-CFY53VQ626"  # Add your Google Analytics ID here (e.g., "G-ABC123DEF4")
   copyright = "Copyright © 2025 Mind & Digital Era"
   dark = "auto"
   highlight = true
