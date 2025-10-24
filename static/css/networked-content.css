@@ -1,20 +1,191 @@
-/* Enhanced styles for networked knowledge base */
+/* Enhanced styles for networked knowledge base - Mind & Digital Era Theme */
 
-/* Search styles */
+/* Modern CSS Variables for consistent theming */
+:root {
+    --primary-color: #6366f1; /* Indigo - represents digital innovation */
+    --secondary-color: #8b5cf6; /* Purple - represents creativity and mind */
+    --accent-color: #06b6d4; /* Cyan - represents digital connectivity */
+    --text-primary: #1e293b; /* Slate - represents knowledge */
+    --text-secondary: #64748b; /* Slate - represents secondary text */
+    --background-primary: #ffffff;
+    --background-secondary: #f8fafc;
+    --background-accent: #f1f5f9;
+    --border-color: #e2e8f0;
+    --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+}
+
+/* Modern typography improvements */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+}
+
+/* Enhanced header styling */
+.site-header {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--shadow-medium);
+}
+
+.site-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.site-title:hover {
+    transform: translateY(-1px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern navigation */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 80%;
+}
+
+/* Enhanced card styling */
+.card {
+    background: var(--background-primary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-large);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Modern button styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background: var(--background-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--background-accent);
+    border-color: var(--primary-color);
+}
+
+/* Enhanced search styling */
+
+/* Enhanced search styling */
 .search-input {
     width: 100%;
     max-width: 400px;
-    padding: 8px 12px;
-    border: 2px solid #e1e5e9;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: border-color 0.2s ease;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-light);
 }
 
 .search-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
 }
 
 .search-results {
@@ -22,105 +193,243 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
-    border: 1px solid #e1e5e9;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--background-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-large);
     max-height: 400px;
     overflow-y: auto;
     z-index: 1000;
     display: none;
+    backdrop-filter: blur(10px);
 }
 
 .search-result {
-    padding: 12px;
-    border-bottom: 1px solid #f1f3f4;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    margin: 0.25rem;
 }
 
 .search-result:hover {
-    background-color: #f8f9fa;
+    background: var(--background-accent);
+    transform: translateX(4px);
 }
 
 .search-result h4 {
-    margin: 0 0 8px 0;
-    font-size: 16px;
-    color: #1a1a1a;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .search-result .snippet {
-    font-size: 14px;
-    color: #666;
-    line-height: 1.4;
-    margin-bottom: 8px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
 }
 
 .search-result .meta {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .search-result .tag {
-    background: #e9ecef;
-    color: #495057;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-size: 12px;
+    background: var(--gradient-accent);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
 }
 
 .search-result .date {
-    font-size: 12px;
-    color: #6c757d;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
 }
 
 .no-results {
-    padding: 20px;
+    padding: 2rem;
     text-align: center;
-    color: #6c757d;
+    color: var(--text-secondary);
+    font-style: italic;
 }
 
-/* Internal links */
+/* Enhanced internal links */
 .internal-link {
-    color: #007bff;
+    color: var(--primary-color);
     text-decoration: none;
-    border-bottom: 1px dotted #007bff;
-    transition: all 0.2s ease;
+    border-bottom: 2px dotted var(--primary-color);
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .internal-link:hover {
-    color: #0056b3;
+    color: var(--secondary-color);
     border-bottom-style: solid;
-    background-color: rgba(0, 123, 255, 0.1);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    transform: translateY(-1px);
 }
 
 .broken-link {
-    color: #dc3545;
+    color: #ef4444;
     text-decoration: line-through;
+    opacity: 0.7;
 }
 
-/* Knowledge graph */
+/* Enhanced knowledge graph */
 .knowledge-graph {
-    margin: 40px 0;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: var(--background-secondary);
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.knowledge-graph::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
 }
 
 .knowledge-graph h3 {
     margin-top: 0;
-    margin-bottom: 20px;
-    color: #495057;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 #graph-container {
     width: 100%;
     height: 400px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background: var(--background-primary);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Mind & Digital Era Theme Enhancements */
+.mind-digital-theme {
+    position: relative;
+}
+
+.mind-digital-theme::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: 1rem;
+    z-index: -1;
+    opacity: 0.1;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.2; }
+}
+
+/* Cognitive-inspired floating elements */
+.cognitive-float {
+    position: relative;
+    overflow: hidden;
+}
+
+.cognitive-float::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.1; }
+}
+
+/* Digital connectivity indicators */
+.digital-connection {
+    position: relative;
+}
+
+.digital-connection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    transform: scaleX(0);
+    animation: connect 2s ease-in-out infinite;
+}
+
+@keyframes connect {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+/* Enhanced content cards with neural network inspiration */
+.neural-card {
+    background: var(--background-primary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.neural-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.neural-card:hover::before {
+    opacity: 1;
+}
+
+.neural-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
+    border-color: var(--primary-color);
 }
 
 /* MOC (Map of Content) styles */
