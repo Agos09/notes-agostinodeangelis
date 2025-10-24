@@ -9,6 +9,12 @@ theme = "etch"
   description = "A networked knowledge base exploring the human mind, epistemology, and the new digital era"
   googleAnalytics = "G-XXXXXXXXXX"  # Replace with your Google Analytics ID
   # googleAnalytics = ""  # Comment out if not using Google Analytics
+  copyright = "Copyright © 2025 Mind & Digital Era"
+  dark = "auto"
+  highlight = true
+  enableSearch = true
+  enableGraph = true
+  enableBacklinks = true
 
 # Enhanced configuration for networked knowledge base
 enableInlineShortcodes = true
@@ -100,13 +106,3 @@ pygmentsUseClasses = true
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
-
-# Parameters for theme customization
-[params]
-  description = "A networked knowledge base exploring the human mind, epistemology, and the new digital era"
-  copyright = "Copyright © 2025 Mind & Digital Era"
-  dark = "auto"
-  highlight = true
-  enableSearch = true
-  enableGraph = true
-  enableBacklinks = true

@@ -94,6 +94,12 @@
         });
     </script>
     {{ end -}}
+
+    {{/* Knowledge base specific meta tags */}}
+    {{ if .Params.org_roam_id -}}
+    <meta name="org-roam-id" content="{{ .Params.org_roam_id }}">
+    {{ end -}}
+    {{ if .Params.concepts -}}
     <meta name="concepts" content="{{ delimit .Params.concepts ", " }}">
     {{ end -}}
 
