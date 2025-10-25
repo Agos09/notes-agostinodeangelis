@@ -11,10 +11,10 @@ draft: false
 related:
 - similarity: 3
   title: 'Org-Roam vs Denote: Choosing the Right Knowledge Management System'
-  url: /org-roam-vs-denote-choosing-the-right-knowledge-management-system/
+  url: /posts/org-roam-vs-denote-knowledge-management/
 - similarity: 1
   title: The Cognitive Implications of Digital Knowledge Management
-  url: /the-cognitive-implications-of-digital-knowledge-management/
+  url: /posts/cognitive-implications-digital-knowledge/
 tags:
 - emacs
 - knowledge-management

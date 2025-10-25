@@ -12,10 +12,10 @@ draft: false
 related:
 - similarity: 2
   title: 'Org-Roam vs Denote: Choosing the Right Knowledge Management System'
-  url: /org-roam-vs-denote-choosing-the-right-knowledge-management-system/
+  url: /posts/org-roam-vs-denote-knowledge-management/
 - similarity: 1
   title: 'Building a Hybrid Knowledge Management System: Org-Roam + Denote'
-  url: /building-a-hybrid-knowledge-management-system-org-roam-deno/
+  url: /posts/hybrid-knowledge-management-guide/
 tags:
 - cognitive-science
 - digital-era

@@ -5,8 +5,35 @@
         {{/* Search functionality */}}
         {{ if .Site.Params.enableSearch -}}
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search articles..." class="search-input">
-            <div id="search-results" class="search-results"></div>
+            <div class="search-box">
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           id="search-input" 
+                           placeholder="Search content... (try: knowledge management, epistemology, digital era)"
+                           autocomplete="off"
+                           spellcheck="false">
+                    <div class="search-icon">🔍</div>
+                    <div class="search-clear" style="display: none;">✕</div>
+                </div>
+                <div class="search-suggestions" id="search-suggestions"></div>
+            </div>
+            <div class="search-results" id="search-results" style="display: none;">
+                <div class="search-results-header">
+                    <span class="results-count">0 results</span>
+                    <div class="search-filters">
+                        <label>
+                            <input type="checkbox" id="filter-posts" checked> Posts
+                        </label>
+                        <label>
+                            <input type="checkbox" id="filter-mocs" checked> Knowledge Maps
+                        </label>
+                        <label>
+                            <input type="checkbox" id="filter-pages" checked> Pages
+                        </label>
+                    </div>
+                </div>
+                <div class="search-results-list"></div>
+            </div>
         </div>
         {{ end -}}
         

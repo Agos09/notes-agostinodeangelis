@@ -12,10 +12,10 @@ draft: false
 related:
 - similarity: 3
   title: 'Building a Hybrid Knowledge Management System: Org-Roam + Denote'
-  url: /building-a-hybrid-knowledge-management-system-org-roam-deno/
+  url: /posts/hybrid-knowledge-management-guide/
 - similarity: 2
   title: The Cognitive Implications of Digital Knowledge Management
-  url: /the-cognitive-implications-of-digital-knowledge-management/
+  url: /posts/cognitive-implications-digital-knowledge/
 tags:
 - knowledge-management
 - emacs
