@@ -1,0 +1,33 @@
+{{/* Blog Grid - Converted from React component */}}
+<section class="blog-grid">
+    <div class="blog-grid-container">
+        <div class="blog-grid-items">
+            {{ with .Site.Data.blogPosts }}
+                {{ range . }}
+                    {{ partial "blog-card.html" . }}
+                {{ end }}
+            {{ else }}
+                {{/* Default blog posts if no data file exists */}}
+                {{ partial "blog-card.html" (dict 
+                    "image" "https://api.builder.io/api/v1/image/assets/TEMP/6b24f54ba9367c982bcf2abc4abf9040b9311798?placeholderIfAbsent=true&apiKey=c00da45f4ed64d9893425a2094d3e1af"
+                    "category" "Knowledge graph"
+                    "title" "Connected ideas"
+                    "description" "Different ideas connect to enhance the understanding"
+                ) }}
+                {{ partial "blog-card.html" (dict 
+                    "image" "https://api.builder.io/api/v1/image/assets/TEMP/ac6bf10a50171593e7fc18ecfd5350f5fe1f488e?placeholderIfAbsent=true&apiKey=c00da45f4ed64d9893425a2094d3e1af"
+                    "category" "Topics"
+                    "title" "Topics cloud"
+                    "description" "Linear helps streamline software projects, sprints, tasks, and bug tracking. Here's how to get started."
+                ) }}
+                {{ partial "blog-card.html" (dict 
+                    "image" "https://api.builder.io/api/v1/image/assets/TEMP/80f805ac20c26d656e695eee1cc18445d3eb7170?placeholderIfAbsent=true&apiKey=c00da45f4ed64d9893425a2094d3e1af"
+                    "category" "Structured Content"
+                    "title" "Maps of contents"
+                    "description" "Organized maps for not getting lost in the sea of exploration"
+                ) }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+

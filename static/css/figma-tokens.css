@@ -1,0 +1,73 @@
+/* Figma Design Tokens - Generated from Figma */
+:root {
+    /* Colors */
+    --figma-primary: #6366f1;
+    --figma-secondary: #8b5cf6;
+    --figma-accent: #06b6d4;
+    --figma-success: #10b981;
+    --figma-warning: #f59e0b;
+    --figma-error: #ef4444;
+    
+    /* Neutral Colors */
+    --figma-gray-50: #f9fafb;
+    --figma-gray-100: #f3f4f6;
+    --figma-gray-200: #e5e7eb;
+    --figma-gray-300: #d1d5db;
+    --figma-gray-400: #9ca3af;
+    --figma-gray-500: #6b7280;
+    --figma-gray-600: #4b5563;
+    --figma-gray-700: #374151;
+    --figma-gray-800: #1f2937;
+    --figma-gray-900: #111827;
+    
+    /* Typography */
+    --figma-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --figma-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    
+    /* Font Sizes */
+    --figma-text-xs: 0.75rem;
+    --figma-text-sm: 0.875rem;
+    --figma-text-base: 1rem;
+    --figma-text-lg: 1.125rem;
+    --figma-text-xl: 1.25rem;
+    --figma-text-2xl: 1.5rem;
+    --figma-text-3xl: 1.875rem;
+    --figma-text-4xl: 2.25rem;
+    
+    /* Font Weights */
+    --figma-font-light: 300;
+    --figma-font-normal: 400;
+    --figma-font-medium: 500;
+    --figma-font-semibold: 600;
+    --figma-font-bold: 700;
+    
+    /* Spacing */
+    --figma-space-1: 0.25rem;
+    --figma-space-2: 0.5rem;
+    --figma-space-3: 0.75rem;
+    --figma-space-4: 1rem;
+    --figma-space-5: 1.25rem;
+    --figma-space-6: 1.5rem;
+    --figma-space-8: 2rem;
+    --figma-space-10: 2.5rem;
+    --figma-space-12: 3rem;
+    --figma-space-16: 4rem;
+    
+    /* Border Radius */
+    --figma-radius-sm: 0.25rem;
+    --figma-radius-md: 0.375rem;
+    --figma-radius-lg: 0.5rem;
+    --figma-radius-xl: 0.75rem;
+    --figma-radius-2xl: 1rem;
+    
+    /* Shadows */
+    --figma-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --figma-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --figma-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --figma-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transitions */
+    --figma-transition-fast: 150ms ease-in-out;
+    --figma-transition-normal: 250ms ease-in-out;
+    --figma-transition-slow: 350ms ease-in-out;
+}

@@ -1,6 +1,28 @@
-<header id="banner">
-    <div class="header-content">
-        <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+<header class="figma-header">
+    <div class="figma-container">
+        <div class="figma-nav">
+            <a href="{{ .Site.BaseURL }}" class="figma-nav-brand">
+                {{ .Site.Title }}
+            </a>
+            
+            <ul class="figma-nav-links">
+                <li><a href="/about" class="figma-nav-link">About</a></li>
+                {{ range .Site.Menus.main.ByWeight -}}
+                <li>
+                    <a href="{{ .URL }}" class="figma-nav-link" title="{{ .Title }}">{{- .Name -}}</a>
+                </li>
+                {{- end }}
+                
+                {{/* Additional navigation for knowledge base features */}}
+                {{ if .Site.Params.enableGraph -}}
+                <li><a href="/graph" class="figma-nav-link" title="Knowledge Graph">Graph</a></li>
+                {{ end -}}
+                
+                {{ if .Site.Params.enableSearch -}}
+                <li><a href="/search" class="figma-nav-link" title="Advanced Search">Search</a></li>
+                {{ end -}}
+            </ul>
+        </div>
         
         {{/* Search functionality */}}
         {{ if .Site.Params.enableSearch -}}
@@ -36,38 +58,20 @@
             </div>
         </div>
         {{ end -}}
-        
-        <nav>
-            <ul>
-                <li><a href="/about">About</a></li>
-                {{ range .Site.Menus.main.ByWeight -}}
-                <li>
-                    {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
-                </li>
-                {{- end }}
-                
-                {{/* Additional navigation for knowledge base features */}}
-                {{ if .Site.Params.enableGraph -}}
-                <li><a href="/graph" title="Knowledge Graph">Graph</a></li>
-                {{ end -}}
-                
-                {{ if .Site.Params.enableSearch -}}
-                <li><a href="/search" title="Advanced Search">Search</a></li>
-                {{ end -}}
-            </ul>
-        </nav>
     </div>
     
     {{/* Breadcrumb navigation for pages */}}
     {{ if .IsPage -}}
     <nav class="breadcrumb">
-        <ol>
-            <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-            {{ if .Section -}}
-            <li><a href="/{{ .Section }}/">{{ .Section | title }}</a></li>
-            {{ end -}}
-            <li class="current">{{ .Title }}</li>
-        </ol>
+        <div class="figma-container">
+            <ol>
+                <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+                {{ if .Section -}}
+                <li><a href="/{{ .Section }}/">{{ .Section | title }}</a></li>
+                {{ end -}}
+                <li class="current">{{ .Title }}</li>
+            </ol>
+        </div>
     </nav>
     {{ end -}}
 </header>

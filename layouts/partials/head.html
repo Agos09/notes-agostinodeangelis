@@ -27,6 +27,11 @@
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
+    {{/* Figma Design System CSS */}}
+    <link rel="stylesheet" href="{{ "css/figma-tokens.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/figma-components.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/figma-design.css" | relURL }}">
+    
     {{/* Enhanced features CSS */}}
     {{ if .Site.Params.enableSearch -}}
     <link rel="stylesheet" href="{{ "css/networked-content.css" | relURL }}">

@@ -1,105 +1,160 @@
 /* Enhanced styles for networked knowledge base - Mind & Digital Era Theme */
 
-/* Modern CSS Variables for consistent theming */
+/* Enhanced Figma Design System Integration */
 :root {
-    --primary-color: #6366f1; /* Indigo - represents digital innovation */
-    --secondary-color: #8b5cf6; /* Purple - represents creativity and mind */
-    --accent-color: #06b6d4; /* Cyan - represents digital connectivity */
-    --text-primary: #1e293b; /* Slate - represents knowledge */
-    --text-secondary: #64748b; /* Slate - represents secondary text */
+    /* Map existing variables to Figma tokens for consistency */
+    --primary-color: var(--figma-primary);
+    --secondary-color: var(--figma-secondary);
+    --accent-color: var(--figma-accent);
+    --text-primary: var(--figma-gray-900);
+    --text-secondary: var(--figma-gray-600);
     --background-primary: #ffffff;
-    --background-secondary: #f8fafc;
-    --background-accent: #f1f5f9;
-    --border-color: #e2e8f0;
-    --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    --background-secondary: var(--figma-gray-50);
+    --background-accent: var(--figma-gray-100);
+    --border-color: var(--figma-gray-200);
+    --shadow-light: var(--figma-shadow-sm);
+    --shadow-medium: var(--figma-shadow-md);
+    --shadow-large: var(--figma-shadow-lg);
+    --gradient-primary: linear-gradient(135deg, var(--figma-primary), var(--figma-secondary));
+    --gradient-accent: linear-gradient(135deg, var(--figma-accent), var(--figma-primary));
+    
+    /* Additional Figma-inspired enhancements */
+    --transition-fast: var(--figma-transition-fast);
+    --transition-normal: var(--figma-transition-normal);
+    --border-radius-sm: var(--figma-radius-sm);
+    --border-radius-md: var(--figma-radius-md);
+    --border-radius-lg: var(--figma-radius-lg);
 }
 
-/* Modern typography improvements */
+/* Figma Design System Typography */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--figma-font-primary);
+    font-size: var(--figma-text-base);
     line-height: 1.6;
     color: var(--text-primary);
+    font-weight: var(--figma-font-normal);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.025em;
+h1 {
+    font-size: var(--figma-text-4xl);
+    font-weight: var(--figma-font-bold);
+    line-height: 1.2;
     color: var(--text-primary);
+    margin-bottom: var(--figma-space-6);
 }
 
-/* Enhanced header styling */
-.site-header {
+h2 {
+    font-size: var(--figma-text-3xl);
+    font-weight: var(--figma-font-semibold);
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin-bottom: var(--figma-space-5);
+}
+
+h3 {
+    font-size: var(--figma-text-2xl);
+    font-weight: var(--figma-font-semibold);
+    line-height: 1.4;
+    color: var(--figma-gray-800);
+    margin-bottom: var(--figma-space-4);
+}
+
+h4, h5, h6 {
+    font-size: var(--figma-text-xl);
+    font-weight: var(--figma-font-medium);
+    line-height: 1.4;
+    color: var(--figma-gray-800);
+    margin-bottom: var(--figma-space-3);
+}
+
+/* Figma Design System Header */
+.figma-header {
     background: var(--gradient-primary);
     color: white;
-    padding: 1rem 0;
-    box-shadow: var(--shadow-medium);
+    padding: var(--figma-space-4) 0;
+    box-shadow: var(--figma-shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
-.site-title {
-    font-size: 1.875rem;
-    font-weight: 700;
+.figma-nav-brand {
+    font-size: var(--figma-text-xl);
+    font-weight: var(--figma-font-bold);
     text-decoration: none;
     color: white;
-    transition: all 0.3s ease;
+    transition: all var(--figma-transition-normal);
 }
 
-.site-title:hover {
+.figma-nav-brand:hover {
     transform: translateY(-1px);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Modern navigation */
-.nav-menu {
+/* Figma Design System Navigation */
+.figma-nav {
     display: flex;
-    gap: 2rem;
+    gap: var(--figma-space-6);
     align-items: center;
+    justify-content: space-between;
 }
 
-.nav-menu a {
+.figma-nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--figma-space-6);
+}
+
+.figma-nav-link {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
+    font-weight: var(--figma-font-medium);
+    font-size: var(--figma-text-sm);
+    padding: var(--figma-space-2) var(--figma-space-4);
+    border-radius: var(--figma-radius-md);
+    transition: all var(--figma-transition-normal);
     position: relative;
 }
 
-.nav-menu a:hover {
+.figma-nav-link:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-1px);
 }
 
-.nav-menu a::after {
+.figma-nav-link::after {
     content: '';
     position: absolute;
     bottom: -2px;
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--accent-color);
-    transition: all 0.3s ease;
+    background: var(--figma-accent);
+    transition: all var(--figma-transition-normal);
     transform: translateX(-50%);
 }
 
-.nav-menu a:hover::after {
+.figma-nav-link:hover::after {
     width: 80%;
 }
 
-/* Enhanced card styling */
+/* Figma Design System Cards */
 .card {
     background: var(--background-primary);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-light);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    position: relative;
+    border-radius: var(--figma-radius-lg);
+    padding: var(--figma-space-6);
+    box-shadow: var(--figma-shadow-sm);
+    border: 1px solid var(--figma-gray-200);
+    transition: all var(--figma-transition-normal);
     overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: var(--figma-shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--figma-gray-300);
 }
 
 .card::before {
@@ -706,10 +761,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* Advanced Search Interface - Enhanced */
+/* Figma Design System Search Interface */
 .search-container {
-    margin: 1rem 0;
+    margin: var(--figma-space-4) 0;
     position: relative;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--figma-radius-lg);
+    padding: var(--figma-space-4);
+    backdrop-filter: blur(10px);
 }
 
 .search-box {

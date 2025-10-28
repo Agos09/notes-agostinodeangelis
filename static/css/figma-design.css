@@ -1,0 +1,278 @@
+/* Figma Design Styles - Converted from React/Tailwind to Hugo */
+/* These styles correspond to the React components added by Builder.io */
+
+/* Blog Hero Styles */
+.blog-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+    width: 100%;
+    background-color: #faf5ff;
+}
+
+.blog-hero-container {
+    padding: 2rem;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.blog-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.blog-hero-header {
+    max-width: 1024px;
+    text-align: center;
+}
+
+.blog-hero-tag {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #6d28d9;
+}
+
+.blog-hero-tag span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background-color: #faf5ff;
+    border-radius: 1rem;
+    color: #6d28d9;
+}
+
+.blog-hero-title {
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: #312e81;
+}
+
+.blog-hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.25rem;
+    color: #6d28d9;
+}
+
+/* Search Input Styles */
+.search-input-wrapper {
+    margin-top: 2.5rem;
+    width: 20rem;
+    max-width: 100%;
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+.search-input-container {
+    width: 100%;
+}
+
+.search-input-box {
+    display: flex;
+    overflow: hidden;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+}
+
+.search-input-field {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #6b7280;
+}
+
+.search-input-field::placeholder {
+    color: #6b7280;
+}
+
+/* Blog Card Styles */
+.blog-card {
+    flex: 1 1 0%;
+    padding: 1.75rem 1.5rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    min-height: 580px;
+    min-width: 240px;
+}
+
+.blog-card-image {
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 1.4;
+}
+
+.blog-card-content {
+    flex: 1;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.blog-card-category {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #6d28d9;
+}
+
+.blog-card-header {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.blog-card-title {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #111827;
+}
+
+.blog-card-arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    padding-top: 0.25rem;
+}
+
+.blog-card-description {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #6b7280;
+}
+
+/* Blog Grid Styles */
+.blog-grid {
+    padding: 2rem;
+    margin-top: 9rem;
+    width: 100%;
+    max-width: 1280px;
+}
+
+.blog-grid-container {
+    width: 100%;
+}
+
+.blog-grid-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Decorative Background */
+.decorative-background {
+    display: flex;
+    gap: 0.625rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.decorative-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 6rem;
+    width: 100%;
+    min-width: 240px;
+}
+
+.decorative-top {
+    display: flex;
+    align-self: stretch;
+    width: 100%;
+    background-color: #faf5ff;
+    fill: #faf5ff;
+    min-height: 245px;
+}
+
+.decorative-middle {
+    display: flex;
+    align-items: flex-start;
+    max-width: 100%;
+    width: 786px;
+}
+
+.decorative-bar-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    min-width: 240px;
+    width: 786px;
+}
+
+.decorative-bar {
+    display: flex;
+    flex-shrink: 0;
+    max-width: 100%;
+    background-color: #c4b5fd;
+    height: 75px;
+    width: 262px;
+}
+
+.decorative-bar-white {
+    display: flex;
+    flex-shrink: 0;
+    background-color: white;
+    height: 75px;
+    min-width: 240px;
+    width: 262px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .blog-hero {
+        max-width: 100%;
+    }
+    
+    .blog-hero-container {
+        padding: 1.25rem;
+    }
+    
+    .blog-hero-title {
+        font-size: 2.25rem;
+    }
+    
+    .blog-grid {
+        padding: 1.25rem;
+        margin-top: 2.5rem;
+    }
+    
+    .blog-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+    }
+}
+

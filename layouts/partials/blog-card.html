@@ -1,0 +1,20 @@
+{{/* Blog Card - Converted from React component */}}
+{{/* Usage: {{ partial "blog-card.html" (dict "image" "/path/to/image.jpg" "category" "Knowledge graph" "title" "Connected ideas" "description" "Different ideas connect..." ) }} */}}
+{{- $title := .title | default "Untitled" -}}
+{{- $category := .category | default "General" -}}
+{{- $description := .description | default "No description available" -}}
+{{- $image := .image | default "/images/placeholder.jpg" -}}
+{{- $imageAspectRatio := .imageAspectRatio | default "aspect-ratio: 1.4" -}}
+
+<article class="blog-card">
+    <img src="{{ $image }}" alt="{{ $title }}" class="blog-card-image" style="{{ $imageAspectRatio }}" />
+    <div class="blog-card-content">
+        <div class="blog-card-category">{{ $category }}</div>
+        <div class="blog-card-header">
+            <h3 class="blog-card-title">{{ $title }}</h3>
+            <img src="/images/arrow-icon.svg" class="blog-card-arrow" alt="Arrow" />
+        </div>
+        <p class="blog-card-description">{{ $description }}</p>
+    </div>
+</article>
+

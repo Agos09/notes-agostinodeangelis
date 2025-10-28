@@ -1,0 +1,18 @@
+{{/* Homepage template using Figma components */}}
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+{{ partial "head.html" . }}
+<body>
+    <div class="blog-page-wrapper">
+        {{ partial "header.html" . }}
+        
+        <main class="blog-page-main">
+            {{ partial "blog-hero.html" . }}
+            {{ partial "decorative-background.html" . }}
+        </main>
+        
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+</html>
+
